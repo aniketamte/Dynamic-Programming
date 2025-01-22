@@ -1,18 +1,18 @@
 public class fibo {
-      public static int fibo(int n, int f[]){
+      public static int fibo(int n, int dp[]){
             //Tc ---> O(n)
           if (n == 0 || n == 1) {
               return n;
           }
-          if(f[n] != 0){ //fib[n] is already calculated
-            return f[n];
+          if(dp[n] != 0){ //fib[n] is already calculated
+            return dp[n];
           }
-          f[n] = fibo(n-1, f) + fibo(n-2, f);
-          return f[n];
+          dp[n] = fibo(n-1, dp) + fibo(n-2, dp);
+          return dp[n];
       }
       public static void main(String[] args) {
             int n=5;
-            int f[] = new int[n+1];
-            System.out.println(fibo(n, f));
+            int dp[] = new int[n+1];
+            System.out.println(fibo(n, dp));
       }
 }
