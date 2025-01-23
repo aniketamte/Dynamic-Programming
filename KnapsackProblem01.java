@@ -21,6 +21,26 @@ public class KnapsackProblem01 {
       }
 
       //Memorization Code
+
+      public static int knapsanckMemorization(int val[], int wt[], int W, int n, int dp[][]){
+            //W = Capacity of Bag  
+          if (W == 0 || n == 0) {
+              return 0;
+          }
+          
+          if (wt[n - 1] <= W) {  //Valid condition
+              //include
+
+              int ans1 = val[n - 1] + knapsanckMemorization(val, wt, W - wt[n - 1], n - 1, dp);
+
+              //exlude
+              int ans2 = knapsanckMemorization(val, wt, W, n - 1, dp);
+              return Math.max(ans1, ans2);
+          } else {
+              //Not valid Condition
+              return knapsanckMemorization(val, wt, W, n - 1, dp);
+          }
+      }
       public static void main(String[] args) {
             int val[] = {15, 14, 10, 45, 30};
             int wt[] = {2, 5, 1, 3, 4};
