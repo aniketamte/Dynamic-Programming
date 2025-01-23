@@ -19,10 +19,13 @@ public class KnapsackProblem01 {
             return knapsanck(val, wt, W, n - 1);
           }
       }
+
+      //Memorization Code
       public static void main(String[] args) {
             int val[] = {15, 14, 10, 45, 30};
             int wt[] = {2, 5, 1, 3, 4};
             int W = 7;
+            int dp[][] = new int[val.length+1][W+1];
             System.out.println(knapsanck(val, wt, W, val.length));
       }
 }
