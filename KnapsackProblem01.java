@@ -46,6 +46,8 @@ public class KnapsackProblem01 {
         }
     }
 
+    //Tabulsr Method Code for 0-1 Knapsack
+
     public static void main(String[] args) {
         int val[] = {15, 14, 10, 45, 30};
         int wt[] = {2, 5, 1, 3, 4};
