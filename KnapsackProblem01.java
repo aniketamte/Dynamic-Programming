@@ -59,6 +59,13 @@ public class KnapsackProblem01 {
             //for 0th row
             dp[0][j] = 0;
         }
+
+        for(int i=1; i<n+1; i++){
+            for(int j=1; j<W+1; j++){
+                int v= val[i-1]; //ith item val
+                int w = wt[i-1];  //ith item wait
+            }
+        }
     }
 
     public static void main(String[] args) {
