@@ -64,6 +64,12 @@ public class KnapsackProblem01 {
             for(int j=1; j<W+1; j++){
                 int v= val[i-1]; //ith item val
                 int w = wt[i-1];  //ith item wait
+                if(w <= j){
+                    //for valid condition
+                    int incProfit = v + dp[i-1][j-w];
+                    int excProfit = dp[i - 1][j - w];
+                    dp[i][j] = Math.max(incProfit, excProfit);
+                }
             }
         }
     }
