@@ -67,8 +67,12 @@ public class KnapsackProblem01 {
                 if(w <= j){
                     //for valid condition
                     int incProfit = v + dp[i-1][j-w];
-                    int excProfit = dp[i - 1][j - w];
+                    int excProfit = dp[i - 1][j];
                     dp[i][j] = Math.max(incProfit, excProfit);
+                } else{
+                    //invalid condition
+                    int excProfit = dp[i-1][j];
+                    dp[i][j] = excProfit;
                 }
             }
         }
