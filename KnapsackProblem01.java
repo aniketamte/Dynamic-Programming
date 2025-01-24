@@ -48,7 +48,7 @@ public class KnapsackProblem01 {
 
     //Tabular Method Code for 0-1 Knapsack
 
-    public static int knapsackTab(int val[], int wt, int W){
+    public static int knapsackTab(int val[], int wt[], int W){
         int n = val.length;
         int dp[][] = new int[n+1][W+1];
         for(int i=0; i<dp.length; i++){
@@ -76,6 +76,7 @@ public class KnapsackProblem01 {
                 }
             }
         }
+        print[dp];
         return dp[n][W];
     }
 
@@ -93,5 +94,6 @@ public class KnapsackProblem01 {
         }
         System.out.println(knapsanck(val, wt, W, val.length));
         System.out.println(knapsanckMemorization(val, wt, W, val.length, dp));
+        System.out.println(knapsackTab(val, wt, W));
     }
 }
