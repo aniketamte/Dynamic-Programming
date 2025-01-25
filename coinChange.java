@@ -10,6 +10,11 @@ public class coinChange {
             for(int j=1; j<sum+1; j++){
                   dp[0][j] = 0;   //Not Possible Solution
             }
+            for(int i=1; i<n+1; i++){
+                  for(int j=1; j<sum+1; j++){
+                        
+                  }
+            }
       }
       public static void main(String[] args) {
             int coins[] = {1,2,3};
