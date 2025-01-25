@@ -15,6 +15,9 @@ public class coinChange {
                         if(coins[i-1] <= j){
                               //valid
                               dp[i][j] = dp[i][j-coins[i-1]] + dp[i-1][j];
+                        } else{
+                              //invalid
+                              dp[i][j] = dp[i-1][j];
                         }
                   }
             }
