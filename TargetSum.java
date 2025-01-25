@@ -7,6 +7,14 @@ public class TargetSum {
             for(int i=0; i<n+1; i++){
                   dp[i][0] = true;
             }
+
+            for(int i=1; i<n+1; i++){
+                  for(int j=1; j<sum+1; j++){
+                        int v = arr[i-1];
+                        //include
+                        //exclude
+                  }
+            }
       }
       public static void main(String[] args) {
             int arr[] = {4,2,7,1,3};
