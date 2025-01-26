@@ -57,8 +57,6 @@ public class LCS {
         int n = s1.length();
         int m = s2.length();
 
-        
-
         //Initialization for 0th row and 0th column
         for (int i = 0; i < n + 1; i++) {
             for (int j = 0; j < n + 1; j++) {
@@ -75,8 +73,8 @@ public class LCS {
                     dp[i][j] = dp[i - 1][j - 1] + 1;
                 } else {
                     //different
-                    int ans1 = dp[i-1][j];
-                    int ans2 = dp[i][j-1];
+                    int ans1 = dp[i - 1][j];
+                    int ans2 = dp[i][j - 1];
                     dp[i][j] = Math.max(ans1, ans2);
                 }
             }
