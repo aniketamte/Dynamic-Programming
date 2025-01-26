@@ -53,9 +53,13 @@ public class LCS {
     }
 
     //Tabulation
-    public static int lcsTabulation(String s1, String s2, int dp[][]) {
+    public static int lcsTabulation(String s1, String s2) {
+        //TC => O(n*m)
         int n = s1.length();
         int m = s2.length();
+
+        //create 2D array
+        int dp[][] = new int[n + 1][m + 1];
 
         //Initialization for 0th row and 0th column
         for (int i = 0; i < n + 1; i++) {
@@ -104,6 +108,6 @@ public class LCS {
 
         System.out.println("Recursion Ans : " + lcs(s1, s2, s1.length(), s2.length()));
         System.out.println("Memorization Ans : " + lcsMemorization(s1, s2, n, m, dp));
-        System.out.println("Tabulation Method : " + lcsTabulation(s1, s2, dp));
+        System.out.println("Tabulation Method : " + lcsTabulation(s1, s2));
     }
 }
