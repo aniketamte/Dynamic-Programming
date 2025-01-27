@@ -30,9 +30,17 @@ public class catalanNumber {
         return dp[n] = ans;
     }
 
+    public static void print (int dp[]){
+      for(int i=0; i<dp.length; i++){
+            System.out.print(dp[i] + " ");
+      }
+      System.out.println();
+    }
+    
+
     public static void main(String[] args) {
         int n = 4;
-        System.out.println("Using Recursion Method" + catalanRec(n));
+        System.out.println("Using Recursion Method : " + catalanRec(n));
 
         int dp[] = new int[n + 1];
         Arrays.fill(dp, -1);
