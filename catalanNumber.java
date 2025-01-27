@@ -30,13 +30,30 @@ public class catalanNumber {
         return dp[n] = ans;
     }
 
-    public static void print (int dp[]){
-      for(int i=0; i<dp.length; i++){
-            System.out.print(dp[i] + " ");
-      }
-      System.out.println();
+    //Using Tabulation method
+    //TC--->O(n*n)
+    public static int catTab(int n) {
+        int dp2[] = new int[n + 1];
+        dp2[0] = 1;
+        dp2[1] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            //Here we calculate Ci =?
+            for (int j = 0; j < i; j++) {
+                //Ci = Cj * Ci-j-1
+                dp2[i] += dp2[j] * dp2[i - j - 1];
+            }
+        }
+        print(dp2);
+        return dp2[n];
     }
-    
+
+    public static void print(int dp2[]) {
+        for (int i = 0; i < dp2.length; i++) {
+            System.out.print(dp2[i] + " ");
+        }
+        System.out.println();
+    }
 
     public static void main(String[] args) {
         int n = 4;
@@ -46,5 +63,7 @@ public class catalanNumber {
         Arrays.fill(dp, -1);
 
         System.out.println("Using Memoization method : " + catalanMemoization(n, dp));
+
+        System.out.println("Using Tabulation Method : " + catTab(n));
     }
 }
