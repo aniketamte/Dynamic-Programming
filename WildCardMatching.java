@@ -1,4 +1,5 @@
 public class WildCardMatching {
+      //T.C => O(n*m)
       public static boolean isMatch(String s, String p){
             int n = s.length();
             int m = p.length();
