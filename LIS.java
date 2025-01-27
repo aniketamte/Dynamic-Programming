@@ -74,5 +74,6 @@ public class LIS {
 
     public static void main(String[] args) {
         int arr[] = {50, 3, 10, 7, 40, 80};
+        System.out.println(lis(arr));
     }
 }
