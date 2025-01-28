@@ -9,9 +9,9 @@ public class MCM {
         }
         int ans = Integer.MAX_VALUE;  //positive Infinity
 
-        for (int k = 1; k <= j - 1; k++) {
+        for (int k = i; k <= j - 1; k++) {
             int cost1 = mcm(arr, i, k);  // Ai....Ak => arr[i-1] * arr[k]
-            int cost2 = mcm(arr, i + 1, j); //Ai+1....Aj => arr[k] * arr[j]
+            int cost2 = mcm(arr, k + 1, j); //Ai+1....Aj => arr[k] * arr[j]
             int cost3 = arr[i - 1] * arr[k] * arr[j];
 
             int finalCost = cost1 + cost2 + cost3;
